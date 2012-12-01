@@ -1,0 +1,77 @@
+/*
+ * Copyright 2012 the CodeLibs Project and the Others.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,
+ * either express or implied. See the License for the specific language
+ * governing permissions and limitations under the License.
+ */
+package org.codelibs.sastruts.html5.taglib.html;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import javax.servlet.jsp.JspException;
+import javax.servlet.jsp.tagext.DynamicAttributes;
+
+import org.apache.struts.taglib.html.BaseFieldTag;
+import org.codelibs.sastruts.html5.util.TagUtil;
+
+/**
+ * Custom tag for input fields of type "email".
+ * 
+ * @author shinsuke
+ *
+ */
+public class SEmailTag extends BaseFieldTag implements DynamicAttributes {
+
+    /** a default serial version uid  */
+    private static final long serialVersionUID = 1L;
+
+    private Map<String, Object> attributes = new HashMap<String, Object>();
+
+    /**
+     * Construct a new instance of this tag.
+     */
+    public SEmailTag() {
+
+        super();
+        this.type = "email";
+        doReadonly = true;
+
+    }
+
+    /* (non-Javadoc)
+     * @see javax.servlet.jsp.tagext.DynamicAttributes#setDynamicAttribute(java.lang.String, java.lang.String, java.lang.Object)
+     */
+    @Override
+    public void setDynamicAttribute(final String uri, final String name,
+            final Object value) throws JspException {
+        if (uri == null) {
+            attributes.put(name, value);
+        }
+    }
+
+    @Override
+    protected void prepareOtherAttributes(final StringBuffer handlers) {
+        super.prepareOtherAttributes(handlers);
+
+        if (!attributes.isEmpty()) {
+            handlers.append(TagUtil.renderAttributes(attributes));
+        }
+    }
+
+    @Override
+    public void release() {
+        super.release();
+        attributes.clear();
+    }
+
+}
