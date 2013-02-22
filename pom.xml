@@ -23,6 +23,19 @@
     <name>CodeLibs Project</name>
     <url>http://www.codelibs.org/</url>
   </organization>
+  <developers>
+    <developer>
+      <id>shinsuke</id>
+      <name>Shinsuke Sugaya</name>
+      <email>shinsuke_at_yahoo.co.jp</email>
+      <url>http://www.chazine.com/</url>
+    </developer>
+  </developers>
+  <scm>
+    <connection>scm:git:git@github.com:codelibs/sastruts-core.git</connection>
+    <url>scm:git:git@github.com:codelibs/sastruts-core.git</url>
+    <developerConnection>scm:git:git@github.com:codelibs/sastruts-core.git</developerConnection>
+  </scm>
   <build>
     <defaultGoal>validate</defaultGoal>
     <pluginManagement>
@@ -85,15 +98,26 @@
       <extension>
         <groupId>org.apache.maven.wagon</groupId>
         <artifactId>wagon-ssh-external</artifactId>
-        <version>1.0-beta-6</version>
+        <version>2.4</version>
       </extension>
     </extensions>
   </build>
+  <distributionManagement>
+    <repository>
+      <id>fess-repository</id>
+      <url>scpexe://shell.sourceforge.jp/home/groups/f/fe/fess/htdocs/repository/</url>
+    </repository>
+  </distributionManagement>
   <repositories>
     <repository>
       <id>maven.seasar.org</id>
       <name>The Seasar Foundation Maven2 Repository</name>
       <url>http://maven.seasar.org/maven2</url>
+    </repository>
+    <repository>
+      <id>fess.sourceforge.jp</id>
+      <name>Fess Repository</name>
+      <url>http://fess.sourceforge.jp/repository/</url>
     </repository>
   </repositories>
   <dependencies>
@@ -118,10 +142,4 @@
       <scope>provided</scope>
     </dependency>
   </dependencies>
-  <distributionManagement>
-    <repository>
-      <id>fess-repository</id>
-      <url>scpexe://shell.sourceforge.jp:/home/groups/f/fe/fess/htdocs/repository/</url>
-    </repository>
-  </distributionManagement>
 </project>
