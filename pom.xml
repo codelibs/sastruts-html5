@@ -32,9 +32,9 @@
     </developer>
   </developers>
   <scm>
-    <connection>scm:git:git@github.com:codelibs/sastruts-core.git</connection>
-    <url>scm:git:git@github.com:codelibs/sastruts-core.git</url>
-    <developerConnection>scm:git:git@github.com:codelibs/sastruts-core.git</developerConnection>
+    <connection>scm:git:git@github.com:codelibs/sastruts-html5.git</connection>
+    <url>scm:git:git@github.com:codelibs/sastruts-html5.git</url>
+    <developerConnection>scm:git:git@github.com:codelibs/sastruts-html5.git</developerConnection>
   </scm>
   <build>
     <defaultGoal>validate</defaultGoal>
