@@ -6,7 +6,7 @@
   <name>sastruts-html5</name>
   <version>0.1.1-SNAPSHOT</version>
   <description />
-  <url>https://github.com/codelibs/sastruts-html5</url>
+  <url>http://project.codelibs.org/sastruts-html5/</url>
   <inceptionYear>2012</inceptionYear>
   <licenses>
     <license>
@@ -75,17 +75,17 @@
         </executions>
       </plugin>
       <plugin>
-        <groupId>com.google.code.maven-license-plugin</groupId>
+        <groupId>com.mycila.maven-license-plugin</groupId>
         <artifactId>maven-license-plugin</artifactId>
-        <version>1.4.0</version>
+        <version>1.9.0</version>
         <configuration>
-          <header>src/header.txt</header>
+          <header>${basedir}/src/etc/header.txt</header>
           <includes>
             <include>src/**/*.java</include>
           </includes>
           <encoding>UTF-8</encoding>
           <headerDefinitions>
-            <headerDefinition>src/header-definition.xml</headerDefinition>
+            <headerDefinition>${basedir}/src/etc/header-definition.xml</headerDefinition>
           </headerDefinitions>
         </configuration>
       </plugin>
@@ -93,27 +93,36 @@
     <extensions>
       <extension>
         <groupId>org.apache.maven.wagon</groupId>
-        <artifactId>wagon-ssh-external</artifactId>
+        <artifactId>wagon-ftp</artifactId>
         <version>2.4</version>
       </extension>
     </extensions>
   </build>
   <distributionManagement>
     <repository>
-      <id>fess-repository</id>
-      <url>scpexe://shell.sourceforge.jp/home/groups/f/fe/fess/htdocs/repository/</url>
+      <id>codelibs-repository</id>
+      <url>ftp://maven.codelibs.org/home/codelibs/maven/</url>
     </repository>
+    <site>
+      <id>codelibs-site</id>
+      <url>ftp://maven.codelibs.org/home/codelibs/project/sastruts-html5/</url>
+    </site>
   </distributionManagement>
   <repositories>
     <repository>
-      <id>maven.seasar.org</id>
-      <name>The Seasar Foundation Maven2 Repository</name>
-      <url>http://maven.seasar.org/maven2</url>
+      <id>codelibs.org</id>
+      <name>CodeLibs Repository</name>
+      <url>http://maven.codelibs.org/</url>
     </repository>
     <repository>
-      <id>fess.sourceforge.jp</id>
-      <name>Fess Repository</name>
-      <url>http://fess.sourceforge.jp/repository/</url>
+      <id>maven.seasar.org</id>
+      <name>The Seasar Foundation Maven2 Repository</name>
+      <url>http://maven.seasar.org/maven2/</url>
+    </repository>
+    <repository>
+      <id>maven-snapshot.seasar.org</id>
+      <name>The Seasar Foundation Maven2 Repository</name>
+      <url>http://maven.seasar.org/maven2-snapshot/</url>
     </repository>
   </repositories>
   <dependencies>
