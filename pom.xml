@@ -4,7 +4,7 @@
   <artifactId>sastruts-html5</artifactId>
   <packaging>jar</packaging>
   <name>sastruts-html5</name>
-  <version>0.1.1</version>
+  <version>0.1.2-SNAPSHOT</version>
   <description />
   <url>http://project.codelibs.org/sastruts-html5/</url>
   <inceptionYear>2012</inceptionYear>
