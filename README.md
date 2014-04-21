@@ -30,8 +30,11 @@ Add the following dependency into your pom.xml.
 ### Replace taglib definition
 
 In common.jsp, replace
+
     <%@taglib prefix="html" uri="http://struts.apache.org/tags-html"%>
+
 with
+
     <%@taglib prefix="html" uri="http://struts.codelibs.org/tags-html"%>
 
 That's it!
